@@ -8,10 +8,14 @@ character = load_image('character.png')
 
 def run_circle():
     print("circle")
-    clear_canvas_now()
-    grass.draw_now(400,30)
-    chracter.draw_now(400,90)
-    pass
+    cx, cy, r = 800 / 2, 300 , 200
+    for deg in range(0, 360, 5):
+        x = cx + r * math.cos( math.radians(deg))
+        y = cy + r* math.sin(math.radians(deg))
+        clear_canvas_now()
+        grass.draw_now(400,30)
+        character.draw_now(x,y)
+        delay(0.01)
 
 def run_rectangle():
     print("rectangle")
